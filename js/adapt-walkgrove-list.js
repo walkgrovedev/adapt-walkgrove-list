@@ -12,6 +12,13 @@ define([
 
     postRender: function() {
       this.setReadyStatus();
+
+      const itemWidth = (100/this.model.get('_columns')) - 1;
+      console.log(itemWidth);
+      this.model.get('_items').forEach(function(item, i) {
+        this.$('.list__item-container').eq(i).width(itemWidth + '%');
+      });
+
     },
 
     checkIfResetOnRevisit: function() {

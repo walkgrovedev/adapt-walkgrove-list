@@ -1,3 +1,23 @@
 .list {
-    
+    &__main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__item-container {
+        padding: 0 0.5rem 0.5rem 0;
+        box-sizing: border-box;
+
+        @media (max-width: @device-width-small) {
+            width: 100%!important;
+        }
+    }
+
+    &__item {
+        padding: 1rem;
+        background-color: @item-color;
+        color: @item-color-inverted;
+        width: 100%;
+    }
 }
