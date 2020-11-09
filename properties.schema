@@ -29,6 +29,36 @@
       "validators": [],
       "help": "This is the instruction text",
       "translatable": true
+    },
+    "_columns": {
+      "type": "string",
+      "required": false,
+      "default": 0,
+      "inputType": "Number",
+      "validators": ["required", "number"],
+      "help": "The number of columns to display the items in",
+      "translatable": false
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "List items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "List content",
+            "inputType": "Text",
+            "validators": [],
+            "help": "",
+            "translatable": true
+          }
+        }
+      }
     }
   }
 }
