@@ -14,11 +14,26 @@ define([
       this.setReadyStatus();
 
       const itemWidth = (100/this.model.get('_columns')) - 1;
-      console.log(itemWidth);
+      //console.log(itemWidth);
       this.model.get('_items').forEach(function(item, i) {
         this.$('.list__item-container').eq(i).width(itemWidth + '%');
       });
 
+      this.setupInview();
+
+    },
+
+    setupInview: function() {
+      var selector = this.getInviewElementSelector();
+      if (!selector) {
+        this.setCompletionStatus();
+        return;
+      }
+      this.setupInviewCompletion(selector);
+    },
+
+    getInviewElementSelector: function() {
+      return '.list__item';
     },
 
     checkIfResetOnRevisit: function() {
