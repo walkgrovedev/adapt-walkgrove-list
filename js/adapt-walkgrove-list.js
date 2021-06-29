@@ -33,7 +33,7 @@ define([
     },
 
     getInviewElementSelector: function() {
-      return '.list__item';
+      if (this.model.get('body')) return '.component__body';
     },
 
     checkIfResetOnRevisit: function() {
